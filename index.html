@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atelier Nour · Pâtisserie française à Tanger</title>
+<meta name="description" content="Pâtisserie française à Tanger. Entremets, tartes, number cakes et gâteaux d'anniversaire faits main par Nour, formée au Cordon Bleu. Commande sur WhatsApp.">
+<meta name="theme-color" content="#1D3A29">
+<meta property="og:title" content="Atelier Nour · Pâtisserie française à Tanger">
+<meta property="og:description" content="Entremets, tartes et gâteaux sur mesure, faits main à Tanger par une cheffe formée au Cordon Bleu.">
+<meta property="og:image" content="https://salimbennani39.github.io/atelier-nour/og.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='16' fill='%231D3A29'/><path d='M9 8v16h6M13 8v16M13 8h5a4.5 4.5 0 0 1 0 9h-5' fill='none' stroke='%23F4E9D2' stroke-width='1.6'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,50;1,9..144,300..800,50&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scrollcraft.css">
+<style>
+  :root {
+    /* brand: the bottle green of the awning and the cream of the logo */
+    --forest: #1D3A29;
+    --forest-deep: #132A1D;
+    --cream: #F6EEDD;
+    --cream-2: #EDE1C6;
+    --ink-forest: #17301F;
+    --ink-forest-soft: #45594B;
+    /* pastry colours, one per display case */
+    --blush: #F8DCDC;
+    --pink: #FAD0DA;
+    --raspberry: #A8183E;
+    --raspberry-light: #F59AAE;
+    --pistachio: #DCE7C2;
+    --mango: #F6D98A;
+    --sable: #D9A45B;
+    /* the peak only */
+    --navy: #17301F;
+    --blue: #D6A652;
+    --blue-deep: #B8893B;
+    --blue-light: #7FA2F0;
+
+    --sc-canvas: var(--forest);
+    --sc-surface: var(--forest-deep);
+    --sc-ink: #F4E9D2;
+    --sc-ink-soft: #C9C8AE;
+    --sc-accent: var(--raspberry-light);
+    --sc-accent-ink: #2A0814;
+    --sc-font-display: "Fraunces", Georgia, serif;
+    --sc-font-text: "Jost", system-ui, sans-serif;
+    --sc-shadow-color: 150 40% 6%;
+    --nav-h: 64px;
+  }
+
+  /* ------------------------------------------------------------ grounds -- */
+  /* Hard cuts: each display case paints its own ground and re-inks itself. */
+  .g-forest { background: var(--forest); --sc-ink: #F4E9D2; --sc-ink-soft: #CFCDB2; --sc-accent: var(--raspberry-light); --sc-accent-ink: #2A0814; color: var(--sc-ink); }
+  .g-cream  { background: var(--cream);  --sc-ink: var(--ink-forest); --sc-ink-soft: var(--ink-forest-soft); --sc-accent: var(--raspberry); --sc-accent-ink: #FFF6F0; color: var(--sc-ink); }
+  .g-blush  { background: var(--blush);  --sc-ink: #3A1420; --sc-ink-soft: #6E3B48; --sc-accent: var(--raspberry); --sc-accent-ink: #FFF6F0; color: var(--sc-ink); }
+  .g-navy   { background: var(--navy);   --sc-ink: #F4E9D2; --sc-ink-soft: #B9C3DA; --sc-accent: var(--raspberry-light); --sc-accent-ink: #2A0814; color: var(--sc-ink); }
+  .g-pink   { background: var(--pink);   --sc-ink: #4A0E24; --sc-ink-soft: #7A3550; --sc-accent: var(--raspberry); --sc-accent-ink: #FFF6F0; color: var(--sc-ink); }
+  .g-nour  { background: radial-gradient(120% 90% at 85% 55%, #24462F 0%, var(--forest-deep) 70%); --sc-ink: #F4E9D2; --sc-ink-soft: #C9CBB0; --sc-accent: var(--raspberry-light); --sc-accent-ink: #2A0814; color: var(--sc-ink); }
+  .g-deep   { background: var(--forest-deep); --sc-ink: #F4E9D2; --sc-ink-soft: #C3C4A8; --sc-accent: var(--raspberry-light); --sc-accent-ink: #2A0814; color: var(--sc-ink); }
+
+  body { background: var(--forest); }
+  h1, h2, h3 { font-family: var(--sc-font-display); font-weight: 500; font-variation-settings: "SOFT" 50, "opsz" 96; letter-spacing: var(--sc-track-snug); line-height: 1.02; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  .vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  img { max-width: 100%; }
+
+  /* ------------------------------------------------------------ the CTA -- */
+  .cta {
+    display: inline-flex; align-items: center; gap: 0.6em;
+    padding: 0.9em 1.35em; border-radius: var(--sc-r-pill);
+    background: var(--sc-accent); color: var(--sc-accent-ink);
+    font: 600 var(--sc-t-base)/1 var(--sc-font-text); letter-spacing: 0.01em;
+    text-decoration: none; white-space: nowrap;
+    box-shadow: var(--sc-e2), inset 0 1px 0 rgb(255 255 255 / 0.25);
+    transition: transform 140ms var(--sc-ease-out), box-shadow 180ms var(--sc-ease-out), background-color 180ms var(--sc-ease-out);
+  }
+  .cta svg { width: 1.2em; height: 1.2em; flex: none; }
+  .cta:active { transform: scale(0.97); }
+  .cta:focus-visible, a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  @media (hover: hover) and (pointer: fine) {
+    .cta:hover { transform: translateY(-1px); box-shadow: var(--sc-e3), inset 0 1px 0 rgb(255 255 255 / 0.25); }
+  }
+  .link { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+
+  /* ----------------------------------------------------- nav: the index -- */
+  .bar {
+    position: fixed; z-index: var(--sc-z-chrome); top: 12px; left: 50%; translate: -50% 0;
+    width: min(100% - 24px, 70rem); height: var(--nav-h);
+    display: flex; align-items: center; gap: var(--sc-5);
+    padding: 0 8px 0 20px; border-radius: var(--sc-r-pill);
+    background: color-mix(in oklab, var(--cream) 94%, transparent);
+    color: var(--ink-forest);
+    box-shadow: 0 8px 24px -10px hsl(150 40% 6% / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.6);
+    backdrop-filter: saturate(1.4) blur(10px);
+  }
+  .bar__home { display: flex; align-items: center; gap: 10px; flex: none; }
+  .bar__home img { height: 30px; width: auto; display: block; }
+  .bar__badge {
+    width: 34px; height: 34px; flex: none; opacity: 0; transform: scale(0.95) rotate(-20deg);
+    transition: opacity 400ms var(--sc-ease-out), transform 600ms var(--sc-ease-out);
+  }
+  .has-ribbon .bar__badge { opacity: 1; transform: none; }
+  .bar__index { display: flex; gap: 2px; margin: 0 auto; padding: 0; list-style: none; }
+  .bar__index a {
+    display: block; padding: 8px 12px; border-radius: var(--sc-r-pill);
+    font: 500 var(--sc-t-sm)/1 var(--sc-font-text); letter-spacing: 0.02em;
+    color: var(--ink-forest-soft); text-decoration: none;
+    transition: color 160ms var(--sc-ease-out), background-color 160ms var(--sc-ease-out);
+  }
+  .bar__index a[aria-current="true"] { color: var(--ink-forest); background: var(--cream-2); }
+  @media (hover: hover) and (pointer: fine) { .bar__index a:hover { color: var(--ink-forest); } }
+  .bar .cta { --sc-accent: var(--forest); --sc-accent-ink: #F4E9D2; padding: 0.75em 1.1em; font-size: var(--sc-t-sm); margin-left: auto; box-shadow: none; }
+  .bar__index + .cta { margin-left: 0; }
+  @media (max-width: 980px) { .bar__index { display: none; } }
+  @media (max-width: 480px) {
+    .bar { padding-left: 14px; gap: var(--sc-3); }
+    .bar__home img { height: 24px; }
+    .bar__badge { width: 24px; height: 24px; }
+    .bar .cta .cta__long { display: none; }
+  }
+
+  /* ------------------------------------------------ 1 · hero: the niche -- */
+  .hero__stage { overflow: hidden; }
+  .hero__copy {
+    position: absolute; z-index: 6; left: var(--sc-gutter); top: calc(50% + var(--nav-h) / 2); translate: 0 -50%;
+    width: min(34rem, 44vw);
+  }
+  .hero__logo { display: block; width: min(17rem, 100%); height: auto; margin-bottom: var(--sc-6); }
+  .hero__title { font-family: var(--sc-font-display); font-size: var(--sc-t-3xl); font-weight: 400; font-style: italic; line-height: 1.02; letter-spacing: var(--sc-track-tight); font-variation-settings: "SOFT" 100, "opsz" 144; text-wrap: balance; }
+  .hero__sub { margin-top: var(--sc-5); max-width: 30rem; font-size: var(--sc-t-lg); line-height: 1.5; color: var(--sc-ink-soft); }
+  .hero__copy .cta { margin-top: var(--sc-7); }
+
+  /* the niche: a window in the wall, like the ones in her boutique */
+  .niche {
+    --w: min(31vw, 30rem, 58vh);
+    position: absolute; z-index: 2; right: calc(var(--sc-gutter) + 4vw); bottom: 0;
+    width: var(--w); height: calc(var(--w) * 1.42);
+    translate: 0 6%;
+  }
+  .niche__wall {
+    position: absolute; inset: 0; border-radius: 999px 999px 0 0;
+    background: #FBF4E6; padding: 14px 14px 0;
+    box-shadow: 0 30px 60px -20px hsl(150 50% 4% / 0.7), inset 0 1px 0 #fff;
+  }
+  .niche__window {
+    position: relative; width: 100%; height: 100%; overflow: hidden;
+    border-radius: 999px 999px 0 0; background: #CDB894;
+    box-shadow: inset 0 18px 40px -10px rgb(60 40 10 / 0.45);
+  }
+  .niche__far {
+    position: absolute; inset: -12% -10%; width: 120%; height: 124%; max-width: none;
+    object-fit: cover; filter: blur(7px) saturate(0.9) brightness(1.02);
+  }
+  .niche__glow { position: absolute; inset: 0; background: radial-gradient(60% 40% at 50% 8%, rgb(255 222 160 / 0.75), transparent 70%); mix-blend-mode: screen; }
+  .niche__sill {
+    position: absolute; left: -22px; right: -22px; bottom: 14%; height: 20px; border-radius: 4px;
+    background: linear-gradient(#FFF9EE, #E6D8BC); box-shadow: 0 14px 22px -8px rgb(40 25 5 / 0.5);
+  }
+  .niche__cake {
+    position: absolute; left: 50%; bottom: calc(14% + 16px); width: 84%; height: auto; max-width: none;
+    translate: -50% 0; transform-origin: 50% 100%;
+    filter: drop-shadow(0 18px 18px rgb(40 25 5 / 0.35));
+  }
+  .hero__fg { position: absolute; z-index: 4; height: auto; max-width: none; filter: drop-shadow(0 30px 30px hsl(150 50% 3% / 0.55)); }
+  .hero__fg--l { width: min(24vw, 23rem); right: calc(var(--sc-gutter) + 4vw + min(31vw, 30rem, 58vh) - 6vw); bottom: -4vh; }
+  .hero__fg--r { width: min(21vw, 20rem); right: -5vw; bottom: -6vh; }
+  .hero__floor { position: absolute; inset: auto 0 0 0; height: 26vh; z-index: 5; background: linear-gradient(transparent, hsl(150 40% 8% / 0.55)); pointer-events: none; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .niche__far  { transform: translate3d(calc(var(--mx, 0) * -6px), calc(var(--sc-p, 0) * 60px), 0) scale(calc(1.06 - var(--sc-p, 0) * 0.04)); }
+    .niche       { transform: translate3d(calc(var(--mx, 0) * 4px), calc(var(--sc-p, 0) * -40px), 0) scale(calc(1 - var(--sc-p, 0) * 0.04)); transform-origin: 50% 100%; }
+    .niche__cake { transform: translate3d(0, calc(var(--sc-p, 0) * -18px), 0) scale(calc(1 + var(--sc-p, 0) * 0.08)); }
+    .hero__fg--l { transform: translate3d(calc(var(--mx, 0) * 14px), calc(var(--sc-p, 0) * -260px), 0) rotate(-4deg); }
+    .hero__fg--r { transform: translate3d(calc(var(--mx, 0) * 18px), calc(var(--sc-p, 0) * -340px), 0) rotate(6deg); }
+  }
+  @media (max-width: 760px) {
+    .hero__copy { left: var(--sc-gutter); right: var(--sc-gutter); top: calc(var(--nav-h) + 36px); translate: none; width: auto; }
+    .hero__logo { width: 13rem; margin-bottom: var(--sc-5); }
+    .hero__title { font-size: var(--sc-t-2xl); }
+    .hero__sub { font-size: var(--sc-t-base); margin-top: var(--sc-3); }
+    .hero__copy .cta { margin-top: var(--sc-5); }
+    .niche { --w: min(58vw, 34vh); right: 50%; translate: 50% 4%; }
+    .hero__fg--l { width: 38vw; right: auto; left: -8vw; bottom: -3vh; }
+    .hero__fg--r { width: 34vw; right: -8vw; bottom: 3vh; }
+  }
+  @media (max-width: 760px) and (max-height: 760px) {
+    .hero__copy { top: calc(var(--nav-h) + 20px); }
+    .hero__logo { width: 9.5rem; margin-bottom: var(--sc-3); }
+    .hero__title { font-size: 1.8rem; }
+    .hero__sub { font-size: var(--sc-t-sm); }
+    .hero__copy .cta { margin-top: var(--sc-4); }
+    .niche { --w: min(50vw, 30vh); }
+    .hero__fg--l { width: 30vw; } .hero__fg--r { width: 27vw; }
+  }
+
+  /* --------------------------------------------- 2 · the vitrine (pan) -- */
+  .vitrine__stage { display: flex; align-items: center; overflow: hidden; }
+  .rail { display: flex; align-items: flex-end; gap: clamp(1.5rem, 3.5vw, 3.5rem); padding: calc(var(--nav-h) + 24px) var(--sc-gutter) 0; }
+  .rail__lead { flex: none; width: min(26rem, 80vw); align-self: center; }
+  .rail__lead h2 { font-size: var(--sc-t-3xl); }
+  .rail__lead p { margin-top: var(--sc-4); color: var(--sc-ink-soft); max-width: 24rem; }
+  .piece { flex: none; width: clamp(15rem, 23vw, 21rem); --i: 0; }
+  .piece__plinth {
+    position: relative; aspect-ratio: 1 / 1.08; display: grid; place-items: end center;
+    border-radius: 999px 999px 18px 18px; background: var(--plinth, var(--pistachio));
+    padding: 0 8% 12%;
+  }
+  .piece__plinth::after { content: ""; position: absolute; left: 12%; right: 12%; bottom: 9%; height: 7%; border-radius: 50%; background: rgb(60 40 20 / 0.18); filter: blur(8px); }
+  .piece__plinth img { position: relative; z-index: 1; width: 100%; height: auto; max-height: 86%; object-fit: contain; }
+  .label { margin-top: var(--sc-4); }
+  .label__cat { font: 600 var(--sc-t-xs)/1.2 var(--sc-font-text); letter-spacing: var(--sc-track-wide); text-transform: uppercase; color: var(--sc-ink-soft); }
+  .label h3 { font-size: var(--sc-t-xl); margin-top: 6px; }
+  .label__comp { margin-top: 6px; font-size: var(--sc-t-sm); line-height: 1.5; color: var(--sc-ink-soft); max-width: 32ch; }
+  .rail__end { flex: none; width: min(22rem, 80vw); align-self: center; }
+  .rail__end h3 { font-size: var(--sc-t-2xl); }
+  .rail__end p { margin: var(--sc-4) 0 var(--sc-6); color: var(--sc-ink-soft); }
+  @media (prefers-reduced-motion: no-preference) {
+    .piece { opacity: clamp(0.55, calc(var(--sc-p, 0) * 11 - var(--i) + 3.2), 1); transform: translate3d(0, calc(clamp(0, var(--i) - var(--sc-p, 0) * 11 - 2.2, 1) * 26px), 0); }
+  }
+  @media (max-width: 760px) { .rail { padding-top: calc(var(--nav-h) + 16px); } .piece { width: 68vw; } }
+
+  /* ---------------------------------------------- 3 · les grands jours -- */
+  .days { padding-block: var(--sc-section); }
+  .days__head { display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--sc-6) var(--sc-9); align-items: end; }
+  .days__head h2 { font-size: var(--sc-t-3xl); }
+  .days__head p { color: var(--sc-ink-soft); font-size: var(--sc-t-lg); line-height: 1.5; max-width: 34rem; }
+  .mosaic { margin-top: var(--sc-9); display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--sc-7) var(--sc-5); align-items: end; }
+  .tall { margin: 0; }
+  .tall__img { display: grid; place-items: end center; padding: 8% 10% 0; border-radius: 999px 999px 20px 20px; background: var(--plinth, #FFF3EF); aspect-ratio: 3 / 4; overflow: hidden; }
+  .tall__img img { width: auto; height: 100%; max-height: 100%; object-fit: contain; object-position: bottom; }
+  .tall:nth-child(1) { grid-column: 1 / span 4; }
+  .tall:nth-child(2) { grid-column: 5 / span 4; transform: translateY(-3rem); }
+  .tall:nth-child(3) { grid-column: 9 / span 4; }
+  .tall:nth-child(4) { grid-column: 2 / span 3; }
+  .tall:nth-child(5) { grid-column: 5 / span 4; transform: translateY(-2rem); }
+  .tall:nth-child(6) { grid-column: 9 / span 3; }
+  .daily { margin-top: var(--sc-10); border-top: 1px solid color-mix(in oklab, var(--sc-ink) 18%, transparent); padding-top: var(--sc-7); }
+  .daily h3 { font-size: var(--sc-t-2xl); }
+  .daily__list { list-style: none; padding: 0; margin: var(--sc-6) 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sc-6) var(--sc-5); }
+  .daily__list li { display: grid; gap: var(--sc-2); }
+  .daily__list img { width: 100%; height: 9.5rem; object-fit: contain; filter: drop-shadow(0 14px 12px rgb(80 30 40 / 0.22)); }
+  .daily__list span { font: 500 var(--sc-t-sm)/1.3 var(--sc-font-text); }
+  @media (max-width: 860px) {
+    .days__head { grid-template-columns: 1fr; }
+    .mosaic { grid-template-columns: 1fr 1fr; gap: var(--sc-6) var(--sc-4); }
+    .tall:nth-child(n) { grid-column: auto; transform: none; }
+    .daily__list { grid-template-columns: 1fr 1fr; }
+    .daily__list img { height: 7.5rem; }
+  }
+
+  /* ------------------------------------------------ 4 · the silence -- */
+  .hush { min-height: 92vh; display: grid; place-items: center; text-align: center; padding: var(--sc-9) var(--sc-gutter); }
+  .hush p { font-family: var(--sc-font-display); font-style: italic; font-weight: 300; font-size: var(--sc-t-3xl); line-height: 1.08; letter-spacing: var(--sc-track-tight); max-width: 18ch; text-wrap: balance; }
+  .hush small { display: block; margin-top: var(--sc-6); font: 500 var(--sc-t-base)/1 var(--sc-font-text); letter-spacing: var(--sc-track-wide); text-transform: uppercase; color: var(--sc-ink-soft); }
+
+  /* ------------------------------------ 5 · PEAK: le ruban cordon bleu -- */
+  .nour__stage { overflow: hidden; }
+  .ribbon { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+  .ribbon--m { display: none; }
+  .nour__copy { position: absolute; z-index: 3; left: var(--sc-gutter); top: calc(var(--nav-h) + 6vh); width: min(40rem, 50vw); }
+  .nour__kicker { font: 600 var(--sc-t-xs)/1 var(--sc-font-text); letter-spacing: 0.16em; text-transform: uppercase; color: var(--sable); }
+  .nour__name { margin-top: var(--sc-4); font-size: clamp(3.6rem, 2rem + 7vw, 8.5rem); font-weight: 400; letter-spacing: -0.04em; line-height: 0.92; }
+  .nour__name em { display: block; font-size: 0.42em; letter-spacing: -0.02em; line-height: 1.05; margin-top: 0.2em; color: #E8D9B5; }
+  .nour__story { margin-top: var(--sc-6); display: grid; gap: var(--sc-3); max-width: 33rem; }
+  .nour__story p { font-size: var(--sc-t-lg); line-height: 1.5; color: var(--sc-ink-soft); }
+  .nour__story p strong { color: var(--sc-ink); font-weight: 500; }
+  #rosette .petal, #rosette-m .petal { transform-box: view-box; }
+  @media (max-width: 760px) {
+    .ribbon--d { display: none; }
+    .ribbon--m { display: block; }
+    .nour__copy { top: calc(var(--nav-h) + 28px); width: auto; right: var(--sc-gutter); }
+    .nour__name { font-size: clamp(3rem, 15vw, 4.6rem); }
+    .nour__story { margin-top: var(--sc-4); gap: var(--sc-2); }
+    .nour__story p { font-size: var(--sc-t-sm); }
+  }
+
+  /* ------------------------------------------------ 6 · les enfants -- */
+  .kids { padding-block: var(--sc-section); overflow: hidden; }
+  .kids__head { max-width: 44rem; }
+  .kids__head h2 { font-size: var(--sc-t-3xl); }
+  .kids__head p { margin-top: var(--sc-4); font-size: var(--sc-t-lg); line-height: 1.5; color: var(--sc-ink-soft); }
+  .spell { margin-top: var(--sc-8); padding: clamp(1.25rem, 3vw, 2.5rem); border-radius: 28px; background: #FFF2F4; box-shadow: var(--sc-e2), inset 0 1px 0 #fff; }
+  .spell__field { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sc-3) var(--sc-5); }
+  .spell__field label { font: 600 var(--sc-t-sm)/1 var(--sc-font-text); letter-spacing: 0.04em; }
+  .spell__field input {
+    flex: 1 1 12rem; min-width: 0; width: 100%; max-width: 22rem; padding: 0.7em 1em; border-radius: 14px; border: 1.5px solid #E7A9B8;
+    background: #fff; color: var(--sc-ink); caret-color: var(--raspberry);
+    font: 500 var(--sc-t-xl)/1.1 var(--sc-font-display); letter-spacing: 0.08em; text-transform: uppercase;
+    transition: border-color 160ms var(--sc-ease-out);
+  }
+  .spell__field input:focus-visible { outline: 2px solid var(--raspberry); outline-offset: 2px; border-color: var(--raspberry); }
+  .spell__chips { margin-top: var(--sc-4); display: flex; flex-wrap: wrap; gap: var(--sc-2); }
+  .spell__chips button { font: 500 var(--sc-t-sm)/1 var(--sc-font-text); padding: 0.6em 1em; border-radius: var(--sc-r-pill); border: 1.5px solid #E7A9B8; background: #fff; color: var(--sc-ink); cursor: pointer; transition: background-color 160ms var(--sc-ease-out), transform 120ms var(--sc-ease-out); }
+  .spell__chips button:active { transform: scale(0.97); }
+  .spell__chips button[aria-pressed="true"] { background: var(--raspberry); border-color: var(--raspberry); color: #FFF6F0; }
+  @media (hover: hover) and (pointer: fine) { .spell__chips button:hover { background: #FFE3EA; } .spell__chips button[aria-pressed="true"]:hover { background: var(--raspberry); } }
+  .spell__tiles { margin-top: var(--sc-6); min-height: clamp(5.5rem, 13vw, 10.5rem); display: flex; flex-wrap: wrap; gap: clamp(0.25rem, 1vw, 0.75rem); align-items: center; justify-content: center; }
+  .tile { display: block; line-height: 0; }
+  .tile img { height: clamp(4.5rem, 12vw, 9.5rem); width: auto; max-width: none; filter: drop-shadow(0 12px 10px rgb(90 20 40 / 0.22)); }
+  .tile--gold span {
+    font: 800 clamp(3.6rem, 10vw, 7.4rem)/1 var(--sc-font-display); font-variation-settings: "SOFT" 100, "opsz" 144;
+    color: var(--sable); -webkit-text-stroke: 2px #B5782F;
+    text-shadow: 0 3px 0 #FFF7EA, 0 12px 14px rgb(120 60 20 / 0.25);
+  }
+  .tile--gap { width: clamp(1rem, 3vw, 2rem); }
+  @media (prefers-reduced-motion: no-preference) {
+    .tile { animation: tile-in 420ms var(--sc-ease-out) both; animation-delay: calc(var(--k, 0) * 50ms); }
+    @keyframes tile-in { from { opacity: 0; transform: translateY(10px) scale(0.95); } }
+  }
+  .spell__note { margin-top: var(--sc-5); font-size: var(--sc-t-sm); color: var(--sc-ink-soft); text-align: center; }
+  .spell__note b { font-weight: 600; color: var(--sc-ink); }
+  .themes { margin-top: var(--sc-9); display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sc-6) var(--sc-5); list-style: none; padding: 0; }
+  .themes li:nth-child(even) { margin-top: var(--sc-8); }
+  .theme__img { aspect-ratio: 4 / 5; display: grid; place-items: center; border-radius: 22px; background: var(--plinth, #fff); padding: 10%; }
+  .theme__img img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 16px 14px rgb(90 20 40 / 0.25)); }
+  .kids__cta { margin-top: var(--sc-9); display: flex; flex-wrap: wrap; align-items: center; gap: var(--sc-4) var(--sc-6); }
+  .kids__cta p { font-family: var(--sc-font-display); font-size: var(--sc-t-xl); font-style: italic; }
+  @media (max-width: 900px) {
+    .themes { grid-template-columns: 1fr 1fr; }
+    .themes li:nth-child(even) { margin-top: 0; }
+  }
+
+  /* -------------------------------------------------- 7 · la boutique -- */
+  .shop__stage { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--sc-9); padding: calc(var(--nav-h) + 24px) var(--sc-gutter) 24px; overflow: hidden; }
+  .shop__copy { max-width: 32rem; justify-self: end; position: relative; min-height: 18rem; }
+  .shop__copy h2 { font-size: var(--sc-t-3xl); }
+  .shop__lines { display: grid; margin-top: var(--sc-5); }
+  .shop__lines p { grid-area: 1 / 1; }
+  .shop__lines p { font-size: var(--sc-t-lg); line-height: 1.5; color: var(--sc-ink-soft); }
+  .shop__facts { margin-top: var(--sc-8); display: grid; gap: var(--sc-3); list-style: none; padding: 0; font-size: var(--sc-t-base); }
+  .shop__facts li { display: flex; gap: var(--sc-3); align-items: baseline; }
+  .shop__facts li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--raspberry-light); flex: none; translate: 0 -2px; }
+  .door { position: relative; width: min(30rem, 34vw, 58vh * 0.84); aspect-ratio: 0.8; border-radius: 26px; overflow: hidden; background: #DDD; box-shadow: 0 40px 70px -30px hsl(150 60% 3% / 0.8); outline: 10px solid #FBF4E6; outline-offset: -1px; }
+  .door img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .door__in { z-index: 1; }
+  .door__cap { position: absolute; z-index: 2; left: 14px; bottom: 14px; padding: 6px 12px; border-radius: 999px; background: rgb(246 238 221 / 0.94); color: var(--ink-forest); font: 600 var(--sc-t-xs)/1.2 var(--sc-font-text); letter-spacing: 0.08em; text-transform: uppercase; }
+  @media (max-width: 860px) {
+    .shop__stage { grid-template-columns: 1fr; gap: var(--sc-5); align-content: start; padding-top: calc(var(--nav-h) + 28px); }
+    .shop__copy { justify-self: start; min-height: 0; }
+    .shop__facts { margin-top: var(--sc-5); }
+    .door { width: min(78vw, 44vh); justify-self: center; }
+  }
+  @media (max-width: 860px) and (max-height: 760px) {
+    .shop__facts { display: none; }
+    .shop__copy h2 { font-size: var(--sc-t-2xl); }
+    .shop__lines p { font-size: var(--sc-t-base); }
+    .door { width: min(72vw, 46vh); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .door__in { display: none; }
+  }
+
+  /* ------------------------------------------ 8 · close: the order plate -- */
+  .close { padding: calc(var(--sc-section) * 0.9) 0 var(--sc-6); }
+  .plate {
+    position: relative; max-width: 50rem; margin-inline: auto;
+    padding: clamp(1.75rem, 5vw, 4rem); border-radius: 28px;
+    background: var(--cream); color: var(--ink-forest);
+    --sc-ink: var(--ink-forest); --sc-ink-soft: var(--ink-forest-soft); --sc-accent: var(--raspberry); --sc-accent-ink: #FFF6F0;
+    box-shadow: 0 40px 80px -40px hsl(150 60% 2% / 0.9), inset 0 1px 0 #fff;
+  }
+  .plate .label__cat { color: var(--ink-forest-soft); }
+  .plate h2 { font-size: var(--sc-t-4xl); letter-spacing: -0.04em; margin-top: var(--sc-3); }
+  .plate__facts { margin: var(--sc-7) 0 0; display: grid; grid-template-columns: 11rem 1fr; gap: var(--sc-4) var(--sc-6); border-top: 1px solid rgb(23 48 31 / 0.15); padding-top: var(--sc-6); }
+  .plate__facts dt { font: 600 var(--sc-t-xs)/1.5 var(--sc-font-text); letter-spacing: var(--sc-track-wide); text-transform: uppercase; color: var(--ink-forest-soft); padding-top: 3px; }
+  .plate__facts dd { margin: 0; font-size: var(--sc-t-lg); line-height: 1.45; }
+  .plate__facts .tel { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .plate__act { margin-top: var(--sc-8); display: flex; flex-wrap: wrap; gap: var(--sc-4) var(--sc-6); align-items: center; }
+  .plate__act .cta { font-size: var(--sc-t-lg); }
+  .plate__rosette { position: absolute; top: clamp(-2.5rem, -4vw, -1.5rem); right: clamp(1rem, 4vw, 3rem); width: clamp(5rem, 10vw, 7.5rem); height: auto; filter: drop-shadow(0 10px 12px rgb(10 20 50 / 0.35)); }
+  .foot { max-width: 50rem; margin: var(--sc-9) auto 0; display: flex; flex-wrap: wrap; gap: var(--sc-4) var(--sc-6); align-items: center; justify-content: space-between; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); padding-inline: var(--sc-gutter); }
+  .foot img { height: 34px; width: auto; }
+  @media (max-width: 640px) {
+    .plate__facts { grid-template-columns: 1fr; gap: var(--sc-1) 0; }
+    .plate__facts dd { margin-bottom: var(--sc-4); }
+    .plate h2 { font-size: var(--sc-t-3xl); }
+  }
+
+  @media (max-width: 380px) {
+    .cta { font-size: 0.95rem; padding: 0.85em 1.05em; gap: 0.5em; }
+    .bar { gap: var(--sc-2); padding-left: 12px; }
+    .bar__home img { height: 20px; }
+    .bar__badge { width: 22px; height: 22px; }
+  }
+  @media (max-width: 380px) { .plate__act .cta { font-size: 0.95rem; } .plate { padding-inline: 1.25rem; } }
+  @media (max-width: 320px) { .cta, .plate__act .cta { font-size: 0.85rem; } }
+
+  /* reduced motion: pinned acts keep their content, every position change goes */
+  @media (prefers-reduced-motion: reduce) {
+    .piece { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<span data-sc-progress></span>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<!-- The WhatsApp glyph, drawn once and reused -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 5.83 2.42 8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.22-8.23 8.22Zm4.51-6.16c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.23-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="rose" viewBox="-100 -100 200 200">
+    <g fill="#D6A652" stroke="#9C6F2A" stroke-width="1">
+      <path d="M-18 30 L-52 96 L-34 88 L-24 104 L6 38 Z" fill="#B8893B"/>
+      <path d="M18 30 L52 96 L34 88 L24 104 L-6 38 Z" fill="#D6A652"/>
+    </g>
+    <g id="rose-petals"></g>
+    <circle r="40" fill="#F4E9D2" stroke="#B8893B" stroke-width="3"/>
+    <circle r="33" fill="none" stroke="#B8893B" stroke-width="1"/>
+    <text y="13" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="38" fill="#17301F">K</text>
+  </symbol>
+  <symbol id="seal" viewBox="-100 -104 200 212">
+    <path d="M-26 40 L-54 98 L-36 90 L-26 104 L2 48 Z" fill="#B8893B"/><path d="M26 40 L54 98 L36 90 L26 104 L-2 48 Z" fill="#D6A652"/>
+    <g fill="#D6A652"><circle cx="72.0" cy="0.0" r="17"/><circle cx="66.5" cy="27.6" r="17"/><circle cx="50.9" cy="50.9" r="17"/><circle cx="27.6" cy="66.5" r="17"/><circle cx="0.0" cy="72.0" r="17"/><circle cx="-27.6" cy="66.5" r="17"/><circle cx="-50.9" cy="50.9" r="17"/><circle cx="-66.5" cy="27.6" r="17"/><circle cx="-72.0" cy="0.0" r="17"/><circle cx="-66.5" cy="-27.6" r="17"/><circle cx="-50.9" cy="-50.9" r="17"/><circle cx="-27.6" cy="-66.5" r="17"/><circle cx="-0.0" cy="-72.0" r="17"/><circle cx="27.6" cy="-66.5" r="17"/><circle cx="50.9" cy="-50.9" r="17"/><circle cx="66.5" cy="-27.6" r="17"/><circle r="74"/></g>
+    <circle r="54" fill="#F4E9D2"/><circle r="47" fill="none" stroke="#B8893B" stroke-width="3"/>
+    <text y="20" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="62" fill="#17301F">K</text>
+  </symbol>
+</svg>
+
+<header class="bar">
+  <a class="bar__home" href="#accueil" aria-label="Atelier Nour, retour en haut">
+    <img src="assets/logo-forest.png" width="612" height="271" alt="Atelier Nour, pâtisserie française">
+    <svg class="bar__badge" viewBox="0 0 200 200" role="img" aria-label="Formée au Cordon Bleu"><use href="#seal"/></svg>
+  </a>
+  <nav aria-label="Sections">
+    <ul class="bar__index">
+      <li><a href="#vitrine">Vitrine</a></li>
+      <li><a href="#grands-jours">Grands jours</a></li>
+      <li><a href="#nour">Nour</a></li>
+      <li><a href="#enfants">Enfants</a></li>
+      <li><a href="#boutique">Boutique</a></li>
+    </ul>
+  </nav>
+  <a class="cta" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>Commander<span class="cta__long"> sur WhatsApp</span></span></a>
+</header>
+
+<main id="top">
+
+  <!-- 1 · APPÉTIT: the niche. Far = her boutique through the window, mid = niche and sill,
+       subject = fraisier on its stand (shares the sill), near = two pastries passing the lens. -->
+  <section id="accueil" class="hero g-forest" data-sc-act="pin" data-sc-span="1.7">
+    <div data-sc-stage class="hero__stage">
+      <div class="niche" aria-hidden="true">
+        <div class="niche__wall">
+          <div class="niche__window">
+            <img class="niche__far" src="assets/g/shop-int.webp" width="1100" height="1375" alt="">
+            <div class="niche__glow"></div>
+          </div>
+        </div>
+        <div class="niche__sill"></div>
+        <img class="niche__cake" src="assets/g/p04.webp" width="1100" height="1096" alt="" fetchpriority="high">
+      </div>
+      <img class="hero__fg hero__fg--l" src="assets/g/p11.webp" width="1100" height="1100" alt="" aria-hidden="true">
+      <img class="hero__fg hero__fg--r" src="assets/g/p06.webp" width="1099" height="1100" alt="" aria-hidden="true">
+      <div class="hero__floor" aria-hidden="true"></div>
+
+      <div class="hero__copy" data-sc-cue="0 0.86 0">
+        <h1><img class="hero__logo" src="assets/logo-cream.png" width="612" height="271" alt="Atelier Nour, pâtisserie française"></h1>
+        <p class="hero__title">La pâtisserie française, signée Nour.</p>
+        <p class="hero__sub">Entremets, tartes et gâteaux sur mesure, faits main à Tanger par une cheffe formée au Cordon Bleu.</p>
+        <a class="cta" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · ABONDANCE: the vitrine slides sideways. Every piece carries the same label schema. -->
+  <section id="vitrine" class="g-cream" data-sc-act="pan" data-sc-span="3.3">
+    <div data-sc-stage class="vitrine__stage">
+      <div class="rail" data-sc-pan="0.02">
+        <div class="rail__lead">
+          <h2>La vitrine.</h2>
+          <p>Les grands gâteaux de la maison, en entier et sur commande. Le catalogue complet et les prix sont sur WhatsApp.</p>
+        </div>
+        <article class="piece" style="--i:1; --plinth:#F4D6D2">
+          <div class="piece__plinth"><img src="assets/g/ig34.webp" width="900" height="900" alt="Charlotte aux framboises entourée de biscuits cuillère et nouée d'un ruban rouge" loading="lazy"></div>
+          <div class="label"><p class="label__cat">Charlotte</p><h3>Vanille et framboises</h3><p class="label__comp">Biscuit cuillère, mousse vanille, framboises fraîches, ruban.</p></div>
+        </article>
+        <article class="piece" style="--i:2; --plinth:#E7D9C9">
+          <div class="piece__plinth"><img src="assets/g/ig46.webp" width="900" height="900" alt="Saint-Honoré avec couronne de choux caramélisés et chantilly" loading="lazy"></div>
+          <div class="label"><p class="label__cat">Classique</p><h3>Saint-Honoré</h3><p class="label__comp">Pâte feuilletée, choux caramélisés, chantilly.</p></div>
+        </article>
+        <article class="piece" style="--i:3; --plinth:#DCE7C2">
+          <div class="piece__plinth"><img src="assets/g/ig32.webp" width="900" height="900" alt="Charlotte pistache aux fruits rouges nouée d'un ruban" loading="lazy"></div>
+          <div class="label"><p class="label__cat">Charlotte</p><h3>Pistache et fruits rouges</h3><p class="label__comp">Biscuit cuillère, bavaroise pistache, insert framboise.</p></div>
+        </article>
+        <article class="piece" style="--i:4; --plinth:#E9D3C4">
+          <div class="piece__plinth"><img src="assets/g/ig35.webp" width="900" height="900" alt="Bavarois aux trois chocolats avec disque de chocolat strié" loading="lazy"></div>
+          <div class="label"><p class="label__cat">Entremets</p><h3>Bavarois aux 3 chocolats</h3><p class="label__comp">Trois mousses, trois chocolats, un seul gâteau.</p></div>
+        </article>
+        <article class="piece" style="--i:5; --plinth:#F6E3A8">
+          <div class="piece__plinth"><img src="assets/g/ig38.webp" width="900" height="900" alt="Entremets à la mangue, cubes de mangue fraîche sur une mousse légère" loading="lazy"></div>
+          <div class="label"><p class="label__cat">Entremets</p><h3>Mangue</h3><p class="label__comp">Mangue fraîche, mousse légère, biscuit croustillant.</p></div>
+        </article>
+        <article class="piece" style="--i:6; --plinth:#F3E6DA">
+          <div class="piece__plinth"><img src="assets/g/ig36.webp" width="900" height="898" alt="Pavlova couverte de fruits rouges et de meringues" loading="lazy"></div>
+          <div class="label"><p class="label__cat">Pavlova</p><h3>Fruits rouges</h3><p class="label__comp">Meringue, crème légère, fruits rouges de saison.</p></div>
+        </article>
+        <article class="piece" style="--i:7; --plinth:#EFDCC0">
+          <div class="piece__plinth"><img src="assets/g/ig30.webp" width="898" height="900" alt="Gâteau Cipriani recouvert de meringue flambée" loading="lazy"></div>
+          <div class="label"><p class="label__cat">Signature</p><h3>Cipriani</h3><p class="label__comp">Base moelleuse, mousse au citron, meringue dorée.</p></div>
+        </article>
+        <article class="piece" style="--i:8; --plinth:#E6D6C2">
+          <div class="piece__plinth"><img src="assets/g/ig37.webp" width="900" height="899" alt="Gâteau moka au café décoré de rosaces de crème et de grains de café" loading="lazy"></div>
+          <div class="label"><p class="label__cat">Gâteau</p><h3>Moka au café</h3><p class="label__comp">Crème au beurre café, amandes grillées.</p></div>
+        </article>
+        <article class="piece" style="--i:9; --plinth:#EAD8C0">
+          <div class="piece__plinth"><img src="assets/g/ig31.webp" width="900" height="900" alt="Tarte aux noix et au caramel" loading="lazy"></div>
+          <div class="label"><p class="label__cat">Tarte</p><h3>Noix et caramel</h3><p class="label__comp">Pâte sablée croustillante, noix, caramel.</p></div>
+        </article>
+        <div class="rail__end">
+          <h3>Et bien d'autres.</h3>
+          <p>Tartes, entremets, cheesecakes, number cakes. Chaque semaine, du nouveau.</p>
+          <a class="cta" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · CÉLÉBRATION: the grand occasions and the everyday, as a mosaic that settles in. -->
+  <section id="grands-jours" class="days g-blush" data-sc-act="flow">
+    <div class="sc-wrap">
+      <div class="days__head" data-sc-in data-sc-stagger="70">
+        <h2>Pour les grands jours.</h2>
+        <p>Mariages, fiançailles, anniversaires. Des pyramides de roses et de fraises, des gâteaux à étages, des number cakes à vos initiales.</p>
+      </div>
+      <div class="mosaic">
+        <figure class="tall" style="--plinth:#FFF0EE" data-sc-reveal="up" data-sc-reveal-at="0.02 0.3">
+          <div class="tall__img"><img src="assets/g/ig47.webp" width="674" height="900" alt="Pyramide de roses roses et de fraises enrobées de chocolat" loading="lazy"></div>
+          <figcaption class="label"><p class="label__cat">Pyramide</p><h3>Roses et fraises</h3></figcaption>
+        </figure>
+        <figure class="tall" style="--plinth:#FBF6EE" data-sc-reveal="up" data-sc-reveal-at="0.06 0.34">
+          <div class="tall__img"><img src="assets/g/ig53.webp" width="667" height="900" alt="Gâteau de mariage blanc à volants, initiales H et R" loading="lazy"></div>
+          <figcaption class="label"><p class="label__cat">Mariage</p><h3>Volants de sucre</h3></figcaption>
+        </figure>
+        <figure class="tall" style="--plinth:#FFF3E6" data-sc-reveal="up" data-sc-reveal-at="0.1 0.38">
+          <div class="tall__img"><img src="assets/g/ig54.webp" width="670" height="900" alt="Gâteau vintage à étages décoré de guirlandes de crème et de roses rouges" loading="lazy"></div>
+          <figcaption class="label"><p class="label__cat">À étages</p><h3>Vintage</h3></figcaption>
+        </figure>
+        <figure class="tall" style="--plinth:#FFF0EE" data-sc-reveal="up" data-sc-reveal-at="0.2 0.46">
+          <div class="tall__img"><img src="assets/g/ig20.webp" width="896" height="900" alt="Number cake en forme de bague de fiançailles et de cœur, fleurs et framboises" loading="lazy"></div>
+          <figcaption class="label"><p class="label__cat">Fiançailles</p><h3>Bague et cœur</h3></figcaption>
+        </figure>
+        <figure class="tall" style="--plinth:#F9EDEB" data-sc-reveal="up" data-sc-reveal-at="0.24 0.5">
+          <div class="tall__img"><img src="assets/g/ig52.webp" width="672" height="900" alt="Pyramide de roses rouges et de fraises enrobées de chocolat blanc" loading="lazy"></div>
+          <figcaption class="label"><p class="label__cat">Pyramide</p><h3>Roses rouges</h3></figcaption>
+        </figure>
+        <figure class="tall" style="--plinth:#EEF2F6" data-sc-reveal="up" data-sc-reveal-at="0.28 0.54">
+          <div class="tall__img"><img src="assets/g/ig51.webp" width="667" height="900" alt="Pyramide de fraises enrobées bleu-gris et de fleurs blanches" loading="lazy"></div>
+          <figcaption class="label"><p class="label__cat">Pyramide</p><h3>Bleu poudré</h3></figcaption>
+        </figure>
+      </div>
+
+      <div class="daily">
+        <h3 data-sc-in>Et pour tous les jours.</h3>
+        <ul class="daily__list" data-sc-in data-sc-stagger="50">
+          <li><img src="assets/g/p03.webp" width="519" height="560" alt="" loading="lazy"><span>Tiramisu</span></li>
+          <li><img src="assets/g/p08.webp" width="540" height="560" alt="" loading="lazy"><span>Pistache et framboise</span></li>
+          <li><img src="assets/g/p07.webp" width="560" height="557" alt="" loading="lazy"><span>Carrot cake</span></li>
+          <li><img src="assets/g/p10.webp" width="556" height="560" alt="" loading="lazy"><span>Tartelette pécan</span></li>
+          <li><img src="assets/g/p09.webp" width="526" height="560" alt="" loading="lazy"><span>Cookie fourré</span></li>
+          <li><img src="assets/g/p12.webp" width="560" height="534" alt="" loading="lazy"><span>Tarte au chocolat</span></li>
+          <li><img src="assets/g/p02.webp" width="560" height="526" alt="" loading="lazy"><span>Biscuits cœur</span></li>
+          <li><img src="assets/g/p05.webp" width="535" height="560" alt="" loading="lazy"><span>Gaufres</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · RECUEILLEMENT: authored silence before the peak. One sentence, a lot of air. -->
+  <section class="hush g-cream" data-sc-act="flow" aria-label="Transition">
+    <div data-sc-in data-sc-stagger="260">
+      <p>Derrière chaque gâteau, il y a une main. Et derrière la main, une école.</p>
+      <small>Faites connaissance</small>
+    </div>
+  </section>
+
+  <!-- 5 · PEAK · FIERTÉ: the cordon bleu, literally. A blue ribbon unrolls under the reader's
+       hand carrying her story, then ties itself into a rosette. Bespoke, driven from --sc-p. -->
+  <section id="nour" class="g-nour" data-sc-act="pin" data-sc-span="4.2">
+    <div data-sc-stage class="nour__stage">
+
+      <svg class="ribbon ribbon--d" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" data-ribbon>
+        <defs>
+          <path id="rb-d1" d="M -140 760 C 160 620, 330 900, 620 790 C 880 690, 1000 560, 900 480 C 800 400, 690 520, 790 600"/>
+          <path id="rb-d2" d="M 790 600 C 900 690, 1080 610, 1230 470"/>
+          <path id="rb-d" d="M -140 760 C 160 620, 330 900, 620 790 C 880 690, 1000 560, 900 480 C 800 400, 690 520, 790 600 C 900 690, 1080 610, 1230 470"/>
+          <filter id="rb-shadow" x="-10%" y="-20%" width="120%" height="150%"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#06140B" flood-opacity="0.6"/></filter>
+        </defs>
+        <g data-full>
+          <use href="#rb-d" class="rb-draw" fill="none" stroke="#A87A32" stroke-width="74" filter="url(#rb-shadow)"/>
+          <use href="#rb-d" class="rb-draw" fill="none" stroke="#D6A652" stroke-width="62"/>
+        </g>
+        <g data-seg="#rb-d1">
+          <mask id="rb-mask-d1" maskUnits="userSpaceOnUse" x="-200" y="-100" width="2000" height="1200"><use href="#rb-d1" class="rb-draw" fill="none" stroke="#fff" stroke-width="90"/></mask>
+          <g mask="url(#rb-mask-d1)"><text font-family="Jost, sans-serif" font-weight="600" font-size="21" letter-spacing="5" fill="#1B3326" dominant-baseline="central" text-anchor="end"><textPath href="#rb-d1" startOffset="100%">NOUR · FORMÉE AU CORDON BLEU · PÂTISSERIE FRANÇAISE · TANGER · NOUR · FORMÉE AU CORDON BLEU · PÂTISSERIE FRANÇAISE · TANGER ·</textPath></text></g>
+        </g>
+        <g data-seg="#rb-d2">
+          <mask id="rb-mask-d2" maskUnits="userSpaceOnUse" x="-200" y="-100" width="2000" height="1200"><use href="#rb-d2" class="rb-draw" fill="none" stroke="#fff" stroke-width="90"/></mask>
+          <use href="#rb-d2" class="rb-draw" fill="none" stroke="#A87A32" stroke-width="74"/>
+          <use href="#rb-d2" class="rb-draw" fill="none" stroke="#D6A652" stroke-width="62"/>
+          <g mask="url(#rb-mask-d2)"><text font-family="Jost, sans-serif" font-weight="600" font-size="21" letter-spacing="5" fill="#1B3326" dominant-baseline="central"><textPath href="#rb-d2" startOffset="28">LE CORDON BLEU · NOUR ·</textPath></text></g>
+        </g>
+        <g class="rosette" transform="translate(1230 470)" data-rosette data-r="150"></g>
+      </svg>
+
+      <svg class="ribbon ribbon--m" viewBox="0 0 400 860" preserveAspectRatio="xMidYMax meet" aria-hidden="true" data-ribbon>
+        <defs>
+          <path id="rb-m1" d="M -60 610 C 70 540, 180 700, 300 640 C 400 590, 380 500, 300 520 C 230 540, 250 620, 310 650"/>
+          <path id="rb-m2" d="M 310 650 C 360 676, 300 740, 200 730"/>
+          <path id="rb-m" d="M -60 610 C 70 540, 180 700, 300 640 C 400 590, 380 500, 300 520 C 230 540, 250 620, 310 650 C 360 676, 300 740, 200 730"/>
+          <filter id="rb-shadow-m" x="-10%" y="-20%" width="120%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#06140B" flood-opacity="0.6"/></filter>
+        </defs>
+        <g data-full>
+          <use href="#rb-m" class="rb-draw" fill="none" stroke="#A87A32" stroke-width="38" filter="url(#rb-shadow-m)"/>
+          <use href="#rb-m" class="rb-draw" fill="none" stroke="#D6A652" stroke-width="31"/>
+        </g>
+        <g data-seg="#rb-m1">
+          <mask id="rb-mask-m1" maskUnits="userSpaceOnUse" x="-200" y="-100" width="2000" height="1200"><use href="#rb-m1" class="rb-draw" fill="none" stroke="#fff" stroke-width="44"/></mask>
+          <g mask="url(#rb-mask-m1)"><text font-family="Jost, sans-serif" font-weight="600" font-size="11" letter-spacing="2.6" fill="#1B3326" dominant-baseline="central" text-anchor="end"><textPath href="#rb-m1" startOffset="100%">NOUR · FORMÉE AU CORDON BLEU · PÂTISSERIE FRANÇAISE · TANGER · NOUR ·</textPath></text></g>
+        </g>
+        <g data-seg="#rb-m2">
+          <mask id="rb-mask-m2" maskUnits="userSpaceOnUse" x="-200" y="-100" width="2000" height="1200"><use href="#rb-m2" class="rb-draw" fill="none" stroke="#fff" stroke-width="44"/></mask>
+          <use href="#rb-m2" class="rb-draw" fill="none" stroke="#A87A32" stroke-width="38"/>
+          <use href="#rb-m2" class="rb-draw" fill="none" stroke="#D6A652" stroke-width="31"/>
+          <g mask="url(#rb-mask-m2)"><text font-family="Jost, sans-serif" font-weight="600" font-size="11" letter-spacing="2.6" fill="#1B3326" dominant-baseline="central"><textPath href="#rb-m2" startOffset="10"></textPath></text></g>
+        </g>
+        <g class="rosette" transform="translate(200 730)" data-rosette data-r="92"></g>
+      </svg>
+
+      <div class="nour__copy">
+        <p class="nour__kicker" data-sc-cue="0 1 0 0">La fondatrice</p>
+        <h2 class="nour__name" data-sc-cue="0 1 0 0">Nour.<em>Formée au Cordon Bleu.</em></h2>
+        <div class="nour__story">
+          <p data-sc-cue="0.1 1 0.1 0.02">Avant la boutique et ses vitrines, il y a eu une école.</p>
+          <p data-sc-cue="0.3 1 0.1 0.02"><strong>Le Cordon Bleu</strong>, l'école de cuisine et de pâtisserie française fondée à Paris en 1895.</p>
+          <p data-sc-cue="0.5 1 0.1 0.02">C'est là que Nour a appris la pâtisserie française. Aujourd'hui, elle la signe à Tanger, gâteau après gâteau.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · JOIE: a parent writes a name and it appears in Nour's real letter cakes. -->
+  <section id="enfants" class="kids g-pink" data-sc-act="flow">
+    <div class="sc-wrap">
+      <div class="kids__head" data-sc-in data-sc-stagger="70">
+        <h2>Pour les enfants.</h2>
+        <p>Leur prénom, leur âge, leurs héros préférés. Écrivez un prénom pour le voir en gâteau.</p>
+      </div>
+
+      <div class="spell" data-sc-in>
+        <div class="spell__field">
+          <label for="prenom">Prénom ou âge</label>
+          <input id="prenom" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="10" value="Sam" aria-describedby="spell-note">
+        </div>
+        <div class="spell__chips" role="group" aria-label="Exemples">
+          <button type="button" data-try="Sam">Sam</button><button type="button" data-try="Hamza">Hamza</button><button type="button" data-try="8 ans">8 ans</button><button type="button" data-try="Jasmine">Jasmine</button>
+        </div>
+        <div class="spell__tiles" id="tiles" aria-live="polite"></div>
+        <p class="spell__note" id="spell-note">Toutes les lettres, tous les chiffres. Nour compose le prénom ou l'âge de votre choix, sur commande.</p>
+      </div>
+
+      <ul class="themes" data-sc-in data-sc-stagger="60">
+        <li><div class="theme__img" style="--plinth:#FFE9EF" data-sc-tilt="6"><img src="assets/g/ig23.webp" width="900" height="672" alt="Number cake chiffre 2 avec un grand nœud rose à pois" loading="lazy"></div><div class="label"><p class="label__cat">Nœud à pois</p><h3>Deux ans</h3></div></li>
+        <li><div class="theme__img" style="--plinth:#E7F3FB" data-sc-tilt="6"><img src="assets/g/ig24.webp" width="900" height="900" alt="Number cake chiffre 4 thème hiver, crème bleu glacier et flocons en chocolat blanc" loading="lazy"></div><div class="label"><p class="label__cat">Hiver givré</p><h3>Quatre ans</h3></div></li>
+        <li><div class="theme__img" style="--plinth:#EAF5E6" data-sc-tilt="6"><img src="assets/g/ig25.webp" width="900" height="896" alt="Number cake chiffre 4 thème super-héros, crème verte et bleue, étoiles" loading="lazy"></div><div class="label"><p class="label__cat">Super-héros</p><h3>Nuit étoilée</h3></div></li>
+        <li><div class="theme__img" style="--plinth:#F4EEFB" data-sc-tilt="6"><img src="assets/g/ig55.webp" width="672" height="900" alt="Gâteau à étages féerique avec champignons, fleurs et le prénom Noor" loading="lazy"></div><div class="label"><p class="label__cat">Féerique</p><h3>Noor</h3></div></li>
+        <li><div class="theme__img" style="--plinth:#FFF1E2" data-sc-tilt="6"><img src="assets/g/ig56.webp" width="674" height="900" alt="Gâteau petit chef, couteaux et rouleau à pâtisserie en sucre, petit rat en pâte à sucre" loading="lazy"></div><div class="label"><p class="label__cat">Petit chef</p><h3>Ratatouille</h3></div></li>
+      </ul>
+
+      <div class="kids__cta" data-sc-in>
+        <p>Un thème en tête ? Nour vous répond.</p>
+        <a class="cta" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · CONFIANCE: the storefront, then the awning rolls up onto the inside. -->
+  <section id="boutique" class="g-forest" data-sc-act="pin" data-sc-span="2">
+    <div data-sc-stage class="shop__stage">
+      <div class="shop__copy">
+        <h2 data-sc-cue="0 1 0 0">La boutique, à Tanger.</h2>
+        <div class="shop__lines">
+          <p data-sc-cue="0 0.42 0 0.1">Une vitrine verte, un auvent, une porte vitrée.</p>
+          <p data-sc-cue="0.44 1 0.1 0.02">Et dedans, les niches dorées et le comptoir plein.</p>
+        </div>
+        <ul class="shop__facts" data-sc-cue="0 1 0 0">
+          <li>Retrait en boutique</li>
+          <li>Livraison à Tanger</li>
+          <li>Commande au moins quelques jours à l'avance</li>
+        </ul>
+      </div>
+      <div class="door">
+        <img src="assets/g/shop-ext.webp" width="1100" height="1375" alt="Devanture de Atelier Nour à Tanger: auvent vert, portes vitrées" loading="lazy">
+        <div class="door__in" data-sc-reveal="up" data-sc-reveal-at="0.28 0.62" style="position:absolute;inset:0">
+          <img src="assets/g/shop-int.webp" width="1100" height="1375" alt="Intérieur de la boutique: murs blancs, niches dorées, vitrine réfrigérée" loading="lazy">
+        </div>
+        <span class="door__cap" aria-hidden="true">Tanger</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · RÉSOLUTION: the order plate, set like a vitrine label. It holds. -->
+  <section id="commander" class="close g-deep" data-sc-act="flow">
+    <div class="sc-wrap">
+      <div class="plate" data-sc-in>
+        <svg class="plate__rosette" viewBox="0 0 200 200" role="img" aria-label="Formée au Cordon Bleu"><use href="#rose"/></svg>
+        <p class="label__cat">Commande</p>
+        <h2>Un message, et c'est parti.</h2>
+        <dl class="plate__facts">
+          <dt>Catalogue et prix</dt><dd>Sur WhatsApp Business, toujours à jour.</dd>
+          <dt>Délai</dt><dd>Au moins quelques jours à l'avance. Écrivez-nous pour plus d'infos.</dd>
+          <dt>Retrait ou livraison</dt><dd>En boutique à Tanger, ou livré chez vous.</dd>
+          <dt>WhatsApp</dt><dd><a class="link tel" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener">+34 647 591 229</a><br><a class="link tel" href="https://wa.me/34647591229" target="_blank" rel="noopener">+34 647 591 229</a></dd>
+        </dl>
+        <div class="plate__act">
+          <a class="cta" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
+        </div>
+      </div>
+      <footer class="foot">
+        <img src="assets/logo-cream.png" width="612" height="271" alt="Atelier Nour, pâtisserie française">
+        <a class="link" href="#" target="_blank" rel="noopener">Instagram @atelier.nour</a>
+        <span>Pâtisserie française · Tanger, Maroc</span>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<script src="scrollcraft.js"></script>
+<script>
+  /* Reduced motion: nothing travels inside the pins, so they should not cost scroll. */
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('[data-sc-act="pin"],[data-sc-act="pan"]').forEach(function (a) { a.setAttribute('data-sc-span', '1.2'); });
+  }
+  ScrollCraft.mount(document.body);
+</script>
+<script>
+(function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var WA = 'https://wa.me/34647591229?text=' + encodeURIComponent('Bonjour Atelier Nour, je souhaite voir le catalogue.');
+  document.querySelectorAll('a[data-wa]').forEach(function (a) { a.href = WA; });
+
+  /* ---------- the rosette: petals built once, shared by the nav badge ---------- */
+  var NS = 'http://www.w3.org/2000/svg';
+  function petalsInto(g, R, store) {
+    var rings = [{ n: 18, s: 1, fillA: '#D6A652', fillB: '#C9973F', off: 0 }, { n: 18, s: 0.74, fillA: '#EBC67E', fillB: '#DDB15F', off: 10 }];
+    rings.forEach(function (ring) {
+      for (var i = 0; i < ring.n; i++) {
+        var p = document.createElementNS(NS, 'path'), r = R * ring.s;
+        p.setAttribute('d', 'M0 ' + (-r) + ' C ' + (r * 0.24) + ' ' + (-r) + ', ' + (r * 0.3) + ' ' + (-r * 0.35) + ', 0 0 C ' + (-r * 0.3) + ' ' + (-r * 0.35) + ', ' + (-r * 0.24) + ' ' + (-r) + ', 0 ' + (-r) + ' Z');
+        p.setAttribute('fill', i % 2 ? ring.fillA : ring.fillB);
+        p.setAttribute('stroke', '#9C6F2A'); p.setAttribute('stroke-width', R / 150);
+        var a = i * (360 / ring.n) + ring.off;
+        p.setAttribute('transform', 'rotate(' + a + ')');
+        g.appendChild(p);
+        if (store) store.push({ el: p, a: a, k: store.length });
+      }
+    });
+  }
+  petalsInto(document.getElementById('rose-petals'), 92, null);
+
+  function buildRosette(g) {
+    var R = parseFloat(g.getAttribute('data-r')), petals = [];
+    var tails = document.createElementNS(NS, 'g');
+    tails.innerHTML = '<path d="M' + (-R * .18) + ' ' + (R * .3) + ' L' + (-R * .55) + ' ' + (R * 1.05) + ' L' + (-R * .36) + ' ' + (R * .95) + ' L' + (-R * .25) + ' ' + (R * 1.13) + ' L' + (R * .06) + ' ' + (R * .4) + ' Z" fill="#B8893B" stroke="#8E6424"/>' +
+                      '<path d="M' + (R * .18) + ' ' + (R * .3) + ' L' + (R * .55) + ' ' + (R * 1.05) + ' L' + (R * .36) + ' ' + (R * .95) + ' L' + (R * .25) + ' ' + (R * 1.13) + ' L' + (-R * .06) + ' ' + (R * .4) + ' Z" fill="#D6A652" stroke="#8E6424"/>';
+    g.appendChild(tails);
+    var pg = document.createElementNS(NS, 'g'); g.appendChild(pg);
+    petalsInto(pg, R, petals);
+    var medal = document.createElementNS(NS, 'g');
+    var id = 'arc' + Math.random().toString(36).slice(2, 7), rr = R * 0.34;
+    medal.innerHTML =
+      '<circle r="' + (R * 0.44) + '" fill="#F4E9D2" stroke="#B8893B" stroke-width="' + (R / 40) + '"/>' +
+      '<circle r="' + (R * 0.4) + '" fill="none" stroke="#B8893B" stroke-width="' + (R / 150) + '"/>' +
+      '<path id="' + id + '" d="M ' + (-rr) + ' 0 A ' + rr + ' ' + rr + ' 0 1 1 ' + rr + ' 0 A ' + rr + ' ' + rr + ' 0 1 1 ' + (-rr) + ' 0" fill="none"/>' +
+      '<text font-family="Jost, sans-serif" font-weight="600" font-size="' + (R * 0.085) + '" fill="#17301F"><textPath href="#' + id + '" textLength="' + (2 * Math.PI * rr * 0.97).toFixed(1) + '" lengthAdjust="spacing">LE CORDON BLEU · LE CORDON BLEU ·</textPath></text>' +
+      '<text y="' + (R * 0.1) + '" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="' + (R * 0.3) + '" fill="#17301F">K</text>';
+    g.appendChild(medal);
+    return { g: g, petals: petals, tails: tails, medal: medal, R: R };
+  }
+
+  var act = document.getElementById('nour');
+  var sets = [].map.call(act.querySelectorAll('[data-ribbon]'), function (svg) {
+    var segs = [].map.call(svg.querySelectorAll('[data-seg]'), function (g) {
+      var len = svg.querySelector(g.getAttribute('data-seg')).getTotalLength(), draws = g.querySelectorAll('.rb-draw');
+      draws.forEach(function (u) { u.style.strokeDasharray = len + ' ' + (len + 10); });
+      return { len: len, draws: draws };
+    });
+    var total = segs.reduce(function (a, g) { return a + g.len; }, 0);
+    var fullDraws = svg.querySelectorAll('[data-full] .rb-draw');
+    fullDraws.forEach(function (u) { u.style.strokeDasharray = total + ' ' + (total + 10); });
+    return { svg: svg, segs: segs, total: total, full: fullDraws, ros: buildRosette(svg.querySelector('[data-rosette]')) };
+  });
+
+  function clamp01(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+  function ease(x) { return 1 - Math.pow(1 - x, 3); }
+  function seg(p, a, b) { return clamp01((p - a) / (b - a)); }
+  var earned = false, lastP = -1;
+
+  function paint(p) {
+    var draw = ease(seg(p, 0.04, 0.66));
+    sets.forEach(function (s) {
+      var D = s.total * draw;
+      s.full.forEach(function (u) { u.style.strokeDashoffset = s.total - D; });
+      s.segs.forEach(function (g) {
+        var shown = Math.max(0, Math.min(g.len, D)); D -= g.len;
+        g.draws.forEach(function (u) { u.style.strokeDashoffset = g.len - shown; });
+      });
+      var n = s.ros.petals.length;
+      s.ros.petals.forEach(function (pt, i) {
+        var t = ease(seg(p, 0.6 + (i % 18) / 18 * 0.14 + (i >= 18 ? 0.05 : 0), 0.72 + (i % 18) / 18 * 0.14 + (i >= 18 ? 0.05 : 0)));
+        pt.el.setAttribute('transform', 'rotate(' + (pt.a - 40 * (1 - t)) + ') scale(' + (0.3 + 0.7 * t) + ')');
+        pt.el.setAttribute('opacity', t.toFixed(3));
+      });
+      var tt = ease(seg(p, 0.62, 0.8));
+      s.ros.tails.setAttribute('transform', 'translate(0 ' + (-s.ros.R * 0.4 * (1 - tt)) + ')');
+      s.ros.tails.setAttribute('opacity', tt.toFixed(3));
+      var mt = ease(seg(p, 0.78, 0.9));
+      s.ros.medal.setAttribute('transform', 'scale(' + (0.95 + 0.05 * mt) + ')');
+      s.ros.medal.setAttribute('opacity', mt.toFixed(3));
+    });
+    act.setAttribute('data-sc-verify-state', draw.toFixed(3));
+    if (p > 0.9 && !earned) { earned = true; document.documentElement.classList.add('has-ribbon'); }
+  }
+
+  if (reduce) { paint(1); }
+  else {
+    (function loop() {
+      var p = parseFloat(act.style.getPropertyValue('--sc-p')) || 0;
+      if (Math.abs(p - lastP) > 0.0005) { paint(p); lastP = p; }
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  /* ---------- hero: the room leans very slightly with the pointer ---------- */
+  var hero = document.getElementById('accueil');
+  if (!reduce && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var tx = 0, cx = 0;
+    addEventListener('pointermove', function (e) { tx = (e.clientX / innerWidth) * 2 - 1; }, { passive: true });
+    (function lean() { cx += (tx - cx) * 0.06; hero.style.setProperty('--mx', cx.toFixed(3)); requestAnimationFrame(lean); })();
+  }
+
+  /* ---------- the name in cake ---------- */
+  var L = {};
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('').forEach(function (c) { L[c] = 'L-' + c; });
+  var input = document.getElementById('prenom'), tiles = document.getElementById('tiles');
+  function spell() {
+    var raw = (input.value || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().replace(/[^A-Z0-9 ]/g, '').slice(0, 10);
+    tiles.innerHTML = '';
+    var k = 0;
+    raw.split('').forEach(function (ch) {
+      var t = document.createElement('span');
+      if (ch === ' ') { t.className = 'tile tile--gap'; tiles.appendChild(t); return; }
+      t.style.setProperty('--k', k++);
+      if (L[ch]) {
+        t.className = 'tile';
+        var img = new Image();
+        img.src = 'assets/g/' + L[ch] + '.webp'; img.alt = ''; img.decoding = 'async';
+        t.appendChild(img);
+      } else {
+        t.className = 'tile tile--gold';
+        var s = document.createElement('span'); s.textContent = ch; t.appendChild(s);
+      }
+      t.setAttribute('aria-hidden', 'true');
+      tiles.appendChild(t);
+    });
+    tiles.setAttribute('aria-label', raw ? raw + ' en gâteau' : 'Aucun prénom');
+  }
+  var chips = [].slice.call(document.querySelectorAll('[data-try]'));
+  function mark() { chips.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-try').toUpperCase() === input.value.toUpperCase() ? 'true' : 'false'); }); }
+  chips.forEach(function (b) { b.addEventListener('click', function () { input.value = b.getAttribute('data-try'); spell(); mark(); }); });
+  input.addEventListener('input', function () { spell(); mark(); });
+  spell(); mark();
+
+  /* ---------- keyboard: focusing the rail's button brings the rail's end into view ---------- */
+  var vit = document.getElementById('vitrine');
+  var vstage = vit.querySelector('[data-sc-stage]');
+  if (!reduce) {
+    /* the engine owns the rail's travel; the browser must not scroll the clipped stage itself */
+    vstage.addEventListener('scroll', function () { if (vstage.scrollLeft) vstage.scrollLeft = 0; });
+    vit.addEventListener('focusin', function () {
+      requestAnimationFrame(function () {
+        vstage.scrollLeft = 0;
+        var top = vit.getBoundingClientRect().top + scrollY;
+        scrollTo({ top: top + vit.offsetHeight - innerHeight - 2, behavior: 'instant' });
+      });
+    });
+  }
+
+  /* ---------- the index knows where you are ---------- */
+  var links = [].slice.call(document.querySelectorAll('.bar__index a'));
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (a) { a.setAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id ? 'true' : 'false'); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    links.forEach(function (a) { var s = document.querySelector(a.getAttribute('href')); if (s) io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
