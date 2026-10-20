@@ -433,7 +433,7 @@
       <li><a href="#boutique">Boutique</a></li>
     </ul>
   </nav>
-  <a class="cta" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>Commander<span class="cta__long"> sur WhatsApp</span></span></a>
+  <a class="cta" data-wa href="https://salimbennani39.github.io/showcase/404.html" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>Commander<span class="cta__long"> sur WhatsApp</span></span></a>
 </header>
 
 <main id="top">
@@ -460,7 +460,7 @@
         <h1><img class="hero__logo" src="assets/logo-cream.png" width="612" height="271" alt="Atelier Nour, pâtisserie française"></h1>
         <p class="hero__title">La pâtisserie française, signée Nour.</p>
         <p class="hero__sub">Entremets, tartes et gâteaux sur mesure, faits main à Tanger par une cheffe formée au Cordon Bleu.</p>
-        <a class="cta" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
+        <a class="cta" data-wa href="https://salimbennani39.github.io/showcase/404.html" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
       </div>
     </div>
   </section>
@@ -512,7 +512,7 @@
         <div class="rail__end">
           <h3>Et bien d'autres.</h3>
           <p>Tartes, entremets, cheesecakes, number cakes. Chaque semaine, du nouveau.</p>
-          <a class="cta" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
+          <a class="cta" data-wa href="https://salimbennani39.github.io/showcase/404.html" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
         </div>
       </div>
     </div>
@@ -671,7 +671,7 @@
 
       <div class="kids__cta" data-sc-in>
         <p>Un thème en tête ? Nour vous répond.</p>
-        <a class="cta" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
+        <a class="cta" data-wa href="https://salimbennani39.github.io/showcase/404.html" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
       </div>
     </div>
   </section>
@@ -712,10 +712,10 @@
           <dt>Catalogue et prix</dt><dd>Sur WhatsApp Business, toujours à jour.</dd>
           <dt>Délai</dt><dd>Au moins quelques jours à l'avance. Écrivez-nous pour plus d'infos.</dd>
           <dt>Retrait ou livraison</dt><dd>En boutique à Tanger, ou livré chez vous.</dd>
-          <dt>WhatsApp</dt><dd><a class="link tel" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener">+34 647 591 229</a><br><a class="link tel" href="https://wa.me/34647591229" target="_blank" rel="noopener">+34 647 591 229</a></dd>
+          <dt>WhatsApp</dt><dd><a class="link tel" data-wa href="https://salimbennani39.github.io/showcase/404.html" target="_blank" rel="noopener">+34 647 591 229</a><br><a class="link tel" href="https://salimbennani39.github.io/showcase/404.html" target="_blank" rel="noopener">+34 647 591 229</a></dd>
         </dl>
         <div class="plate__act">
-          <a class="cta" data-wa href="https://wa.me/34647591229" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
+          <a class="cta" data-wa href="https://salimbennani39.github.io/showcase/404.html" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Commander sur WhatsApp</a>
         </div>
       </div>
       <footer class="foot">
@@ -739,7 +739,7 @@
 <script>
 (function () {
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var WA = 'https://wa.me/34647591229?text=' + encodeURIComponent('Bonjour Atelier Nour, je souhaite voir le catalogue.');
+  var WA = 'https://salimbennani39.github.io/showcase/404.html' + encodeURIComponent('Bonjour Atelier Nour, je souhaite voir le catalogue.');
   document.querySelectorAll('a[data-wa]').forEach(function (a) { a.href = WA; });
 
   /* ---------- the rosette: petals built once, shared by the nav badge ---------- */
@@ -902,10 +902,12 @@
   }
 })();
 </script>
-<script>/* showcase: links that lead nowhere open the Showcase 404 */
+<script>/* showcase: links that lead nowhere, and booking / WhatsApp / call links, open the Showcase 404 */
 (()=>{const U='https://salimbennani39.github.io/showcase/404.html';
-const dead=a=>{const h=(a.getAttribute('href')||'').trim();return h===''||h==='#'||h==='#!'||/^javascript:/i.test(h)};
-addEventListener('click',e=>{if(e.defaultPrevented)return;const a=e.target.closest&&e.target.closest('a');
-if(a&&dead(a)){e.preventDefault();location.href=U;}});})();</script>
+const dead=a=>{const h=(a.getAttribute('href')||'').trim();return h===''||h==='#'||h==='#!'||/^javascript:/i.test(h)||/^(tel:|sms:|mailto:|https?:\/\/(api\.|web\.)?(wa\.me|whatsapp\.com))/i.test(h)};
+addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a');if(!a)return;
+const h=(a.getAttribute('href')||'').trim();const contact=/^(tel:|sms:|mailto:|https?:)/i.test(h);
+if(dead(a)&&(contact||!e.defaultPrevented)){e.preventDefault();e.stopImmediatePropagation();location.href=U;}},true);
+const o=window.open;window.open=function(u){if(/(wa\.me|whatsapp\.com|^tel:)/i.test(String(u||'')))return location.href=U,null;return o.apply(this,arguments)};})();</script>
 </body>
 </html>
